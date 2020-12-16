@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.paper {
+  transition: transform .225s;
+}
+
+.paper:hover {
+  transform: scale(1.04)
+}
