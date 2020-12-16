@@ -1,4 +1,4 @@
-import { Tag, Flex, Box, Heading, Avatar, Text, Badge, Divider, Stack, Grid, GridItem } from '@chakra-ui/react'
+import { Link, Flex, Box, Heading, Avatar, Text, Badge, Divider, Stack, Grid, GridItem } from '@chakra-ui/react'
 import './App.css';
 
 
@@ -18,10 +18,10 @@ const experiences = [{
   title: 'Rochester Institute of Technology',
   subtitle: 'BS in Computer Science - 3.95 GPA',
   timeRange: '2012-2017',
-  body: `Studied Computer Science at RIT in Rochester, NY. In this time I completed 4 years of study and 1 year of internships.
+  body: `Studied Computer Science at RIT in Rochester, NY. In this time, I completed 4 years of study and 1 year of internships.
   I interned with Paychex as a Java Developer, Epic as a Data Scientist, and Target as a Software Engineer.
   `,
-  tags: ['Django', 'JavaScript', 'Python', 'Java', 'C'],
+  tags: ['JavaScript', 'Python', 'Java', 'C', 'Django'],
   color: 'orange'
 }]
 
@@ -30,14 +30,48 @@ const projects = [{
   timeRange: '2020',
   body: `A framework-agnostic, reactive state management library.`,
   tags: ['TypeScript', 'npm'],
-  color: 'blue'
+  color: 'blue',
+  link: 'https://malerba118.github.io/elementos-docs/'
 },{
   title: 'Snowbox',
   timeRange: '2020',
   body: `A CodeSandbox clone, built for internal use at Target.
   `,
-  tags: ['Chakra-UI', 'Snowpack', 'React', "Node"],
-  color: 'blue'
+  tags: ['Chakra-UI', 'React', "Node", 'Snowpack'],
+  color: 'blue',
+  link: 'https://drive.google.com/file/d/1li65WH-6ZmBRtGVtgz2-eIjkjoLS7F4j/view?usp=sharing'
+},{
+  title: 'react-esm-sandbox',
+  timeRange: '2020',
+  body: `React components to edit/interpret es modules in the browser.
+  `,
+  tags: ['TypeScript', 'React'],
+  color: 'blue',
+  link: 'https://github.com/malerba118/react-esm-sandbox'
+},{
+  title: 'react-particle-image',
+  timeRange: '2020',
+  body: `A React component that renders images as interactive particles.
+  `,
+  tags: ['TypeScript', 'React', 'npm'],
+  color: 'blue',
+  link: 'https://github.com/malerba118/react-particle-image'
+},{
+  title: 'Climax',
+  timeRange: '2018',
+  body: `A web app that matches you with US states based on your climate preferences.
+  `,
+  tags: ['JavaScript', 'React'],
+  color: 'blue',
+  link: 'https://malerba118.github.io/climax/#/'
+},{
+  title: 'Blog',
+  timeRange: '2017 - 2020',
+  body: `I write tech articles for freeCodeCamp, HackerNoon, and Better Programming.
+  `,
+  tags: ['JavaScript', 'React'],
+  color: 'blue',
+  link: 'https://austinmalerba.medium.com/'
 }]
 
 function App() {
@@ -88,11 +122,11 @@ function App() {
                     <Flex direction="column" key={project.title} p={4} h="100%">
                       <Box>
                         <Text size="sm" fontWeight="bold">
-                          {project.title}
+                          <Link color="blue.500" isExternal href={project.link}>{project.title}</Link>
                         </Text>
                         <Text fontSize="sm" fontWeight="500" color="gray.600">{project.subtitle}</Text>
                       </Box>
-                      <Text flex={1} fontSize="xs" fontWeight="400" color="gray.900">
+                      <Text noOfLines={2} flex={1} fontSize="xs" fontWeight="400" color="gray.900">
                         {project.body}
                       </Text>
                       <Stack isInline>
