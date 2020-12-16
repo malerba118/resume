@@ -38,7 +38,7 @@ const projects = [{
   timeRange: '2020',
   body: `I built a CodeSandbox clone for internal use at Target.
   `,
-  tags: ['Chakra-UI', 'React', "Node", 'Snowpack'],
+  tags: ['Chakra-UI', 'React', "Node", "Mongo", 'Snowpack'],
   color: 'blue',
   link: 'https://drive.google.com/file/d/1li65WH-6ZmBRtGVtgz2-eIjkjoLS7F4j/view?usp=sharing'
 },{
@@ -89,7 +89,7 @@ function App() {
                   <Text fontWeight="bold">
                     Austin Malerba
                   </Text>
-                  <Text fontSize="sm" fontWeight="500" color="gray.600">Web Developer</Text>
+                  <Text fontSize="sm" fontWeight="500" color="gray.600">Web Developer - USA - MST</Text>
                 </Box>
               </Flex>
               <Divider />
