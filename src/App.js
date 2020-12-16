@@ -1,4 +1,6 @@
-import { Link, Flex, Box, Heading, Avatar, Text, Badge, Divider, Stack, Grid, GridItem } from '@chakra-ui/react'
+import { Link, Flex, Box, Heading, Avatar, Text, Badge, Divider, Stack, Grid, GridItem, Icon } from '@chakra-ui/react'
+import { RiGithubFill, RiMediumFill } from 'react-icons/ri'
+import { IoIosMail } from 'react-icons/io'
 import './App.css';
 
 
@@ -7,9 +9,8 @@ const experiences = [{
   subtitle: 'Senior Software Engineer',
   timeRange: '2017 - Current',
   body: `Worked on several UI's and API's across merchandise, supply chain, and dev-ops. 
-  Built products from scratch and improved long-standing products.
-  Led two-phase optimization effort, first identifying API bottlenecks via metrics and then optimizing via caching layer.
-  Facilitated learning culture via regular engineering meetings.
+  Led two-phase optimization effort, first identifying API bottlenecks via metrics and then optimizing via caching layer. Introduced user-role simulation feature that greatly reduced time spent on QA testing.
+  Facilitated learning culture via regular innovation meetings.
   Contributed to innersource component library. 
   Built CodeSandbox clone for use with private npm registries.`,
   tags: ['TypeScript', 'React', 'Redux', 'Angular', 'Node', 'Docker'],
@@ -17,9 +18,9 @@ const experiences = [{
 },{
   title: 'Rochester Institute of Technology',
   subtitle: 'BS in Computer Science - 3.95 GPA',
-  timeRange: '2012-2017',
-  body: `Studied Computer Science at RIT in Rochester, NY. In this time, I completed 4 years of study and 1 year of internships.
-  I interned with Paychex as a Java Developer, Epic as a Data Scientist, and Target as a Software Engineer.
+  timeRange: '2012 - 2017',
+  body: `Studied Computer Science at RIT in Rochester, NY. Completed 4 years of study and 1 year of internships.
+  Interned with Paychex as a Java Developer, Epic as a Data Scientist, and Target as a Software Engineer.
   `,
   tags: ['JavaScript', 'Python', 'Java', 'C', 'Django'],
   color: 'orange'
@@ -28,14 +29,14 @@ const experiences = [{
 const projects = [{
   title: 'Elementos',
   timeRange: '2020',
-  body: `A framework-agnostic, reactive state management library.`,
+  body: `I published a framework-agnostic, reactive state management library.`,
   tags: ['TypeScript', 'npm'],
   color: 'blue',
   link: 'https://malerba118.github.io/elementos-docs/'
 },{
   title: 'Snowbox',
   timeRange: '2020',
-  body: `A CodeSandbox clone, built for internal use at Target.
+  body: `I built a CodeSandbox clone for internal use at Target.
   `,
   tags: ['Chakra-UI', 'React', "Node", 'Snowpack'],
   color: 'blue',
@@ -43,7 +44,7 @@ const projects = [{
 },{
   title: 'react-esm-sandbox',
   timeRange: '2020',
-  body: `React components to edit/interpret es modules in the browser.
+  body: `I'm building components to edit/interpret ES modules in the browser.
   `,
   tags: ['TypeScript', 'React'],
   color: 'blue',
@@ -51,19 +52,19 @@ const projects = [{
 },{
   title: 'react-particle-image',
   timeRange: '2020',
-  body: `A React component that renders images as interactive particles.
+  body: `I published a component that renders images as interactive particles.
   `,
   tags: ['TypeScript', 'React', 'npm'],
   color: 'blue',
   link: 'https://github.com/malerba118/react-particle-image'
 },{
-  title: 'Climax',
+  title: 'Iconik Studio',
   timeRange: '2018',
-  body: `A web app that matches you with US states based on your climate preferences.
+  body: `I built an svg editor via ionic-angular for iOS/Android.
   `,
-  tags: ['JavaScript', 'React'],
+  tags: ['ionic', 'Angular', 'fabricjs', 'PouchDB'],
   color: 'blue',
-  link: 'https://malerba118.github.io/climax/#/'
+  link: 'https://drive.google.com/file/d/1D2UOPYsPDcutjtIlckQrJJBv7H7uchOm/view?usp=sharing'
 },{
   title: 'Blog',
   timeRange: '2017 - 2020',
@@ -81,7 +82,9 @@ function App() {
           <Box className="paper" w="8.5in" minW="8.5in" h="11in" p=".75in" rounded="md" boxShadow="lg" bg="white">
             <Stack spacing="5">
               <Flex>
-                <Avatar src="me2.jpg" />
+                <Link isExternal href="https://malerba118.github.io/resume/">
+                  <Avatar src="me2.JPG" />
+                </Link>
                 <Box ml="3">
                   <Text fontWeight="bold">
                     Austin Malerba
@@ -124,14 +127,13 @@ function App() {
                         <Text size="sm" fontWeight="bold">
                           <Link color="blue.500" isExternal href={project.link}>{project.title}</Link>
                         </Text>
-                        <Text fontSize="sm" fontWeight="500" color="gray.600">{project.subtitle}</Text>
                       </Box>
                       <Text noOfLines={2} flex={1} fontSize="xs" fontWeight="400" color="gray.900">
                         {project.body}
                       </Text>
                       <Stack isInline>
                         {project.tags.map(tag => (
-                          <Badge opacity={.75} fontSize=".66rem" variant="outline" key={tag} colorScheme={project.color}>
+                          <Badge opacity={.75} fontSize=".66rem" variant="outline" key={tag} colorScheme={'blue'}>
                             {tag}
                           </Badge>
                         ))}
@@ -140,6 +142,27 @@ function App() {
                   </GridItem>
                 ))}
               </Grid>
+              <GridItem rowSpan="auto" />
+              <Grid templateColumns="repeat(3, 1fr)" gap={4}>
+                 <Stack spacing="1" isInline>
+                    <Icon fontSize="lg" as={RiGithubFill} /> 
+                    <Text fontSize="xs" fontWeight="600" color="gray.600">
+                      <Link isExternal href="https://github.com/malerba118">malerba118</Link>
+                    </Text>
+                 </Stack>
+                 <Stack spacing="1" isInline textAlign="center">
+                    <Icon fontSize="lg" as={IoIosMail} /> 
+                    <Text fontSize="xs" fontWeight="600" color="gray.600">
+                      austin.malerba@gmail.com
+                    </Text>
+                 </Stack>
+                 <Stack spacing="1" isInline justify="flex-end">
+                    <Icon fontSize="lg" as={RiMediumFill} /> 
+                    <Text fontSize="xs" fontWeight="600" color="gray.600">
+                      <Link isExternal href="https://austinmalerba.medium.com/">austinmalerba</Link>
+                    </Text>
+                 </Stack>
+                </Grid>
             </Stack>
           </Box>
         </Grid>
