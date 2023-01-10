@@ -231,7 +231,7 @@ function App() {
               <Stack spacing="1" isInline justify="flex-end">
                 <Icon fontSize="lg" as={RiTwitterFill} />
                 <Text fontSize="xs" fontWeight="600" color="gray.600">
-                  <Link isExternal href="https://twitter.com/MalerbaAustin">
+                  <Link isExternal href="https://twitter.com/austin_malerba">
                     Twitter
                   </Link>
                 </Text>
