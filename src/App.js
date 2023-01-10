@@ -18,15 +18,19 @@ import "./App.css";
 
 const experiences = [
   {
+    title: "Diode",
+    subtitle: "Founding Engineer",
+    timeRange: "2021-2022",
+    body: `Built web-based 3D hardware simulator capable of simulating analog circuits and microcontrollers.`,
+    tags: ["TypeScript", "Next.js", "Supabase", "Chakra-UI"],
+    color: "teal",
+  },
+  {
     title: "Target",
     subtitle: "Senior Software Engineer",
     timeRange: "2017 - 2021",
-    body: `Worked on several UI's and API's across merchandise, supply chain, and dev-ops. 
-  Led two-phase optimization effort, first identifying API bottlenecks via metrics and then optimizing via caching layer. Introduced user-role simulation feature that greatly reduced time spent on QA testing.
-  Facilitated learning culture via regular innovation meetings.
-  Contributed to innersource component library. 
-  Built CodeSandbox clone for use with private npm registries.`,
-    tags: ["TypeScript", "React", "Redux", "Angular", "Node", "Docker"],
+    body: `Worked on several UI's and API's across merchandise, supply chain, and dev-ops.`,
+    tags: ["TypeScript", "React", "Angular", "Node", "Docker"],
     color: "red",
   },
   {
@@ -43,12 +47,12 @@ const experiences = [
 
 const projects = [
   {
-    title: "Vernos",
-    timeRange: "2021",
-    body: `I'm currently making a portfolio site builder with Next.js, Firebase, Chakra-UI, and framer-motion.`,
-    tags: ["Chakra-UI", "Next.js", "Firebase"],
+    title: "Scrollex",
+    timeRange: "2022",
+    body: `I published a library that lets devs build scroll experiences declaratively.`,
+    tags: ["TypeScript", "framer-motion"],
     color: "blue",
-    link: "https://vernos.app",
+    link: "https://github.com/malerba118/scrollex",
   },
   {
     title: "Elementos",
@@ -65,8 +69,7 @@ const projects = [
   `,
     tags: ["Chakra-UI", "React", "Mongo", "Snowpack"],
     color: "blue",
-    link:
-      "https://drive.google.com/file/d/1li65WH-6ZmBRtGVtgz2-eIjkjoLS7F4j/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1li65WH-6ZmBRtGVtgz2-eIjkjoLS7F4j/view?usp=sharing",
   },
   {
     title: "react-particle-image",
@@ -84,8 +87,7 @@ const projects = [
   `,
     tags: ["ionic", "Angular", "fabricjs", "PouchDB"],
     color: "blue",
-    link:
-      "https://drive.google.com/file/d/1D2UOPYsPDcutjtIlckQrJJBv7H7uchOm/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1D2UOPYsPDcutjtIlckQrJJBv7H7uchOm/view?usp=sharing",
   },
   {
     title: "Blog",
@@ -120,7 +122,7 @@ function App() {
               <Box ml="3">
                 <Text fontWeight="bold">Austin Malerba</Text>
                 <Text fontSize="sm" fontWeight="500" color="gray.600">
-                  Web Developer - USA - MST
+                  Web Developer - USA - Mountain Time
                 </Text>
               </Box>
             </Flex>
@@ -131,6 +133,7 @@ function App() {
                 borderLeftColor={`${experience.color}.300`}
                 borderLeftWidth="4px"
                 px="2"
+                spacing={1}
               >
                 <Box>
                   <Flex align="center">
@@ -153,7 +156,7 @@ function App() {
                 <Text fontSize="xs" fontWeight="400" color="gray.900">
                   {experience.body}
                 </Text>
-                <Stack isInline>
+                <Stack pt={1} isInline>
                   {experience.tags.map((tag) => (
                     <Badge
                       opacity={0.75}
