@@ -145,6 +145,7 @@ function App() {
                       fontWeight="600"
                       color="gray.600"
                       ml="2"
+                      mt="0.1rem"
                     >
                       ({experience.timeRange})
                     </Text>
